@@ -1,9 +1,16 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111827">
+<meta name="mobile-web-app-capable" content="yes">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محمد الصراري | مطور واجهات مواقع</title>
     <link rel="stylesheet" href="style.css">
-</head><body><header>
+</head>
+  <body>
+    <header>
     <nav class="navbar">
         <h2 class="logo">محمد الصراري</h2>
 
@@ -127,6 +134,14 @@
 <footer>
     <p>جميع الحقوق محفوظة © 2026 محمد الصراري</p>
 </footer>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(() => console.log("تم تشغيل التطبيق"))
+      .catch((error) => console.log(error));
+  });
+}
+</script>
 </body>
 </html>
